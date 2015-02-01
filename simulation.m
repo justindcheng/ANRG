@@ -1,6 +1,10 @@
-gpfile = fopen('groups.txt');
-M = dlmread('groups.txt');
+groups = dlmread('groups.txt');
 enfile = fopen('environment.txt');
-[eta,Ptn,side] = textscan('enviornment.txt','%f');
-dis(eta, Ptn, side);
+eta = fscanf(enfile,'eta=%f\n',1);
+Ptn = fscanf(enfile,'Pt/N=%f\n',1);
+side = fscanf(enfile,'side=%f',1);
+fclose(enfile);
+eta
+Ptn
+side
 
