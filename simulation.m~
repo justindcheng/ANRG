@@ -7,12 +7,13 @@ side = fscanf(enfile,'side=%f',1);
 fclose(enfile);
 [G,N] = size(Groups);
 Map = side*rand(N,2);
-dlmwrite(outfile,groupfile,'');
-s = str2double(simulations);
-p = str2double(passes);
-for j=1:s
+dlmwrite(outfile,Groups,' ');
+int
+for j=1:10
+    disp(j);
     Map = side*rand(N,2);
-    if mod(j,p) == 0
-        dlmwrite(outfile,Map,'-append','delimiter',' ');
+    disp (mod(j,passes));
+    if mod(j,passes) == 0
+        dlmwrite(outfile,Map,'-append');
     end
 end
