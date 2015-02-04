@@ -1,13 +1,14 @@
-function simulation(groupfile, enfile,outfile,simulations,passes)
+function simulation(groupfile,enfile,outfile,simulations,passes)
 Groups = dlmread(groupfile);
-enfile = fopen(enfile);
-eta = fscanf(enfile,'eta=%f\n',1);
-gamma = fscanf(enfile,'Pt/N=%f\n',1);
-side = fscanf(enfile,'side=%f',1);
-fclose(enfile);
+efile = fopen(enfile);
+eta = fscanf(efile,'eta=%f\n');
+gamma = fscanf(efile,'Pt/N=%f\n');
+side = fscanf(efile,'side=%f');
+fclose(efile);
 [G,N] = size(Groups);
 Map = side*rand(N,2);
 dlmwrite(outfile,groupfile,'');
+dlmwrite(outfile,enfile,'-append','delimiter','');
 s = str2double(simulations);
 p = str2double(passes);
 for j=1:s
