@@ -27,7 +27,13 @@ while ~(feof(data))
         plot(Map(1,i),Map(2,i),'b.');
     end;
     for i = 1:G
-        
+        for j = 1:N
+            for k = 1:N
+                if (Groups(i,j) == 1) && (Groups(i,k) == 1) && (i ~= j)
+                    
+                end;
+            end;
+        end;
     end;
     drawnow;
     %disp(Map);
