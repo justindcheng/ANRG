@@ -11,18 +11,11 @@ dlmwrite(outfile,groupfile,'');
 dlmwrite(outfile,enfile,'-append','delimiter','');
 s = str2double(simulations);
 p = str2double(passes);
+Map = side*rand(N,2);
 for j = 1:s
     for i = 1:N
-        r = rand*2*pi;
-        oldx = Map(i,1);
-        oldy = Map(i,2);
-        oldM = Metric(Map,Groups,eta,gama);
-        Map(1,i) = oldx + sin(r)/j;
-        Map(2,i) = oldy + cos(r)/j;
-        if Metric(Map,Groups,eta,gamma) < oldM
-            Map(i,1) = oldx;
-            Map(i,2) = oldy;
-        end;
+        r = rand;
+        
     end;
     if mod(j,p) == 0
         dlmwrite(outfile,Map,'-append','delimiter',' ');
