@@ -30,16 +30,15 @@ while ~(feof(data))
         for j = 1:N
             for k = 1:N
                 if (Groups(i,j) == 1) && (Groups(i,k) == 1) && (i ~= j)
-                    d = Distance(Map(1,j),Map(2,j),Map(1,k),Map(2,k))/side/sqrt(2);
-                    d = sqrt(d);
-                    line('XData', [Map(1,j) Map(1,k)], 'YData', [Map(2,j) Map(2,k)], 'LineStyle', '-', ...
-    'LineWidth', 1, 'Color',[d,d,d]);
+                    d = Distance(Map(1,j),Map(2,j),Map(1,k),Map(2,k))/side;
+                    line('XData', [Map 200], 'YData', [1 1], 'LineStyle', '-', ...
+    'LineWidth', 2, 'Color','m')
                 end;
             end;
         end;
     end;
     drawnow;
     %disp(Map);
-    pause(0.01);
+    pause(0.04);
 end;
 fclose(data);
