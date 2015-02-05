@@ -40,6 +40,6 @@ while ~(feof(data))
     end;
     drawnow;
     %disp(Map);
-    pause(0.01);
+    pause(0.1);
 end;
 fclose(data);

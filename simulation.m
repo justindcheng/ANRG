@@ -16,9 +16,9 @@ for j = 1:s
         r = rand*2*pi;
         oldx = Map(i,1);
         oldy = Map(i,2);
-        oldM = Metric(Map,Groups,eta,gama);
-        Map(1,i) = oldx + sin(r)/j;
-        Map(2,i) = oldy + cos(r)/j;
+        oldM = Metric(Map,Groups,eta,gamma);
+        Map(i,1) = oldx + sin(r)/10;
+        Map(i,2) = oldy + cos(r)/10;
         if Metric(Map,Groups,eta,gamma) < oldM
             Map(i,1) = oldx;
             Map(i,2) = oldy;
