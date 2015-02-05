@@ -7,9 +7,9 @@ function [ SINR ] = Metric( M, G, eta, gamma )
         for j = 1:R
             for k = 1:R
                 if G(i,j) ~= 0 && G(i,k) ~= 0 && j ~= k   
-                   SINR = SINR + pow(M(j,1), M(j,2), M(k,1), M(k,2), eta);
-                elseif G(i,k) == 0
-                    SINR = SINR - pow(M(j,1), M(j,2), M(k,1), M(k,2), eta);
+                   SINR = SINR * Power(M(j,1), M(j,2), M(k,1), M(k,2), eta);
+                %elseif G(i,k) == 0
+                    %SINR = SINR / Power(M(j,1), M(j,2), M(k,1), M(k,2), eta);
                 end               
             end
         end
