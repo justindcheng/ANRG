@@ -19,6 +19,18 @@ for j = 1:s
         oldM = Metric(Map,Groups,eta,gamma);
         Map(i,1) = oldx + sin(r)/10;
         Map(i,2) = oldy + cos(r)/10;
+        if Map(i,1) < 0
+            Map(i,1) = 0;
+        end;
+        if Map(i,1) > side
+            Map(i,1) = side;
+        end;
+        if Map(i,2) < 0
+            Map(i,2) = 0;
+        end;
+        if Map(i,2) > side
+            Map(i,2) = side;
+        end;
         if Metric(Map,Groups,eta,gamma) < oldM
             Map(i,1) = oldx;
             Map(i,2) = oldy;
