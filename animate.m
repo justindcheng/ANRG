@@ -13,9 +13,7 @@ side = fscanf(efile,'side=%f');
 %positions are stored in Map
 Map = zeros(2,N);
 Colors = rand(3,G);
-disp(Colors);
 Colors = ones(3,G) - Colors.*Colors;
-disp(Colors);
 figure;
 while ~(feof(data))
     %read an instance of Map from data file
