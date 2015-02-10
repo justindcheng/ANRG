@@ -12,6 +12,10 @@ side = fscanf(efile,'side=%f');
 [G,N] = size(Groups);
 %positions are stored in Map
 Map = zeros(2,N);
+Colors = rand(3,G);
+disp(Colors);
+Colors = ones(3,G) - Colors.*Colors;
+disp(Colors);
 figure;
 while ~(feof(data))
     %read an instance of Map from data file
@@ -33,13 +37,13 @@ while ~(feof(data))
                     d = Distance(Map(1,j),Map(2,j),Map(1,k),Map(2,k))/side/sqrt(2);
                     d = sqrt(d);
                     line('XData', [Map(1,j) Map(1,k)], 'YData', [Map(2,j) Map(2,k)], 'LineStyle', '-', ...
-    'LineWidth', 1, 'Color',[d,d,d]);
+    'LineWidth', 2, 'Color',[d*Colors(1,i),d*Colors(2,i),d*Colors(3,i)]);
                 end;
             end;
         end;
     end;
     drawnow;
     %disp(Map);
-    pause(0.1);
+    %pause(0.05);
 end;
 fclose(data);
