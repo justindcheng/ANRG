@@ -14,7 +14,7 @@ function [ Sum ] = Metric( M, G, eta, gamma )
                           x(a) = Power(M(j,1), M(j,2), M(a,1), M(1,2),eta);
                        end
                    end
-                Sum = Sum + SINR(s, x, gamma);
+                Sum = Sum + log(SINR(s, x, gamma));
                 end               
             end
         end
