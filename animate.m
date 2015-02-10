@@ -26,16 +26,16 @@ while ~(feof(data))
     hold on;
     axis([0,side,0,side]);
     for i = 1:N
-        plot(Map(1,i),Map(2,i),'b.');
+        plot(Map(1,i),Map(2,i),'b.', 'MarkerSize', 30);
     end;
     for i = 1:G
         for j = 1:N
             for k = 1:N
                 if (Groups(i,j) == 1) && (Groups(i,k) == 1) && (i ~= j)
-                    d = Distance(Map(1,j),Map(2,j),Map(1,k),Map(2,k))/side/sqrt(2);
-                    d = sqrt(d);
+                    %d = Distance(Map(1,j),Map(2,j),Map(1,k),Map(2,k))/side/sqrt(2);
+                    %d = sqrt(d);
                     line('XData', [Map(1,j) Map(1,k)], 'YData', [Map(2,j) Map(2,k)], 'LineStyle', '-', ...
-    'LineWidth', 2, 'Color',[d*Colors(1,i),d*Colors(2,i),d*Colors(3,i)]);
+    'LineWidth', 2, 'Color',[Colors(1,i),Colors(2,i),Colors(3,i)]);
                 end;
             end;
         end;
