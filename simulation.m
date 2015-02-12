@@ -1,13 +1,13 @@
 function simulation(groupfile,enfile,outfile,simulations,passes)
 
 %get two line of txt file and put into arrays
-numbers = fopen(groupfile);
-numline = fgetl(numbers);
+numbers1 = fopen(groupfile);
+numline = fgetl(numbers1);
 Host = sscanf(numline, '%u');
-numline = fgetl(numbers);
+numline = fgetl(numbers1);
 Location = sscanf(numline, '%u');
 
-Groups = dlmread(numbers);
+Groups = dlmread(groupfile, ' ', 2, 0);
 efile = fopen(enfile);
 eta = fscanf(efile,'eta=%f\n');
 gamma = fscanf(efile,'Pt/N=%f\n');
@@ -15,13 +15,13 @@ side = fscanf(efile,'side=%f');
 fclose(efile);
 [G,N] = size(Groups);
 Map = side*rand(N,2);
-dlmwrite(outfile,numbers,'');
+dlmwrite(outfile,groupfile,'');
 dlmwrite(outfile,enfile,'-append','delimiter','');
 s = str2double(simulations);
 p = str2double(passes);
 for j = 1:s
     for i = 1:N
-        if h(i) == 1
+        if Host(i) == 1
             continue;
         end
         r = rand*2*pi;
