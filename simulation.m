@@ -42,12 +42,13 @@ for j = 1:s
         if Map(i,2) > side
             Map(i,2) = side;
         end;
-        if Metric(Map,Groups,eta,gamma) < oldM
+        if Metric(Map,Groups,eta,gamma) <= oldM
             Map(i,1) = oldx;
             Map(i,2) = oldy;
         end;
     end;
     if mod(j,p) == 0
         dlmwrite(outfile,Map,'-append','delimiter',' ');
+        disp(oldM);
     end
 end
