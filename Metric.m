@@ -10,7 +10,7 @@ function Sum = Metric( M, G, eta, gamma )
                    s = Power(M(j,1), M(j,2), M(k,1), M(k,2), eta);
                    x = zeros(1:R);
                    for a = 1:R
-                       if j ~= a && k ~= k
+                       if j ~= a && k ~= a
                           x(a) = Power(M(j,1), M(j,2), M(a,1), M(1,2),eta);
                        end
                    end
