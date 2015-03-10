@@ -49,6 +49,6 @@ for j = 1:s
     end;
     if mod(j,p) == 0
         dlmwrite(outfile,Map,'-append','delimiter',' ');
-        disp(oldM);
+        %disp(oldM);
     end
 end
