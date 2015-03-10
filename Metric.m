@@ -8,14 +8,13 @@ function Sum = Metric( M, G, eta, gamma )
             for k = 1:R
                 if G(i,j) ~= 0 && G(i,k) ~= 0 && j ~= k   
                    s = Power(M(j,1), M(j,2), M(k,1), M(k,2), eta);
-                   x = zeros(1:R);
+                   x = zeros(1,R);
                    for a = 1:R
                        if j ~= a && k ~= a
                           x(a) = Power(M(j,1), M(j,2), M(a,1), M(a,2),eta);
                        end
                    end
                    Sum = Sum + log(1+ SINR(s, x, gamma));
-                   Sum = Sum(1);
                 end               
             end
         end

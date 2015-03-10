@@ -1,7 +1,7 @@
 function simulation_grad(groupfile,enfile,outfile,simulations,passes)
 
 delta = 0.1;
-constant = .03;
+constant = 0.01;
 
 %get two line of txt file and put into arrays
 numbers1 = fopen(groupfile);
