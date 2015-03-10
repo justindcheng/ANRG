@@ -3,19 +3,19 @@ function Sum = Metric( M, G, eta, gamma )
 %   Given a matrix, the input parameters(M,G,eta,gamma)
     [N,R] = size(G);
     Sum = 0;
-    x = zeros(1:R);
     for i = 1:N
         for j = 1:R
             for k = 1:R
                 if G(i,j) ~= 0 && G(i,k) ~= 0 && j ~= k   
                    s = Power(M(j,1), M(j,2), M(k,1), M(k,2), eta);
+                   x = zeros(1:R);
                    for a = 1:R
-                       if G(i,a) == 0
+                       if j ~= a && k ~= k
                           x(a) = Power(M(j,1), M(j,2), M(a,1), M(1,2),eta);
                        end
                    end
-                Sum = Sum + log(1+ SINR(s, x, gamma));
-                Sum = Sum(1);
+                   Sum = Sum + log(1+ SINR(s, x, gamma));
+                   Sum = Sum(1);
                 end               
             end
         end
