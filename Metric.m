@@ -1,4 +1,4 @@
-function [ Sum ] = Metric( M, G, eta, gamma )
+function Sum = Metric( M, G, eta, gamma )
 %Metric Creator
 %   Given a matrix, the input parameters(M,G,eta,gamma)
     [N,R] = size(G);
@@ -15,11 +15,11 @@ function [ Sum ] = Metric( M, G, eta, gamma )
                        end
                    end
                 Sum = Sum + log(1+ SINR(s, x, gamma));
+                Sum = Sum(1);
                 end               
             end
         end
     end
-
 
 
 
