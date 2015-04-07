@@ -1,6 +1,7 @@
 #ifndef METRIC_H
 #define METRIC_H
 #include <vector> 
+#include "robot.h"
 using namespace std;
 
 //M is the 2 column matrix 
@@ -8,9 +9,9 @@ using namespace std;
 
 class Metric {
 	public:
-		Metric(vector<int> M, vector<int> G, double eta, double gamma );
+		Metric(vector<Robot> M, vector<Robot> G, double eta, double gamma );
 		~Metric();
-
+		double sum; 
 	private:
 
 

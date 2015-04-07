@@ -7,13 +7,13 @@ using namespace std;
 
 Metric::Metric(vector<Robot> M, vector<Robot> G, double eta, double gamma ){
 	int N = (int)G.size();
-	int R = (int)(G[0].size());
+	int R = 2;
 
-	double sum = 0; 
+	double sum1 = 0; 
 	for (int i = 0; i < N; i++){
 		for (int j = 0; j< R; j++){
 			for (int k = 0; k < R; k++){
-				if (G[i][j] != 0 && G[i][k] != 0 && j != k  ){
+				if (G[i].x != 0 && G[i].y != 0 && j != k  ){
 					double s = Power(M[j] , M[k]  , eta);
 					vector<double> x; 
 					for (int l = 0; l < R; l++ ){
@@ -24,9 +24,11 @@ Metric::Metric(vector<Robot> M, vector<Robot> G, double eta, double gamma ){
 							x[m] = Power(M[j], M[m], eta );
 						}
 					}
-					sum = sum + log(1 + SINR(s, x, gamma) );
+					sum1 = sum1 + log(1 + SINR(s, x, gamma) );
 				}
 			}
 		}
 	}
+
+	sum = sum1;
 };
