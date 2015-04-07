@@ -44,12 +44,11 @@ while ~(feof(data))
         end;
     end;
     drawnow;
-    %plot metric
+    %
     figure(2);
     hold on;
     plot(time,Metric(Map,G,eta,gamma),'b.', 'MarkerSize', 5);
     time = time + 1;
-    disp(Metric(Map,G,eta,gamma));
     %disp(Map);
     %pause(0.05);
 end;
