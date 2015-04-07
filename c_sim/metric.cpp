@@ -7,7 +7,7 @@ using namespace std;
 
 Metric::Metric(vector<Robot> M, vector<vector<int> > G, double eta, double gamma ){
 	int N = (int)G.size();
-	int R = 2;
+	int R = (int)G[0].size();
 
 	double sum1 = 0; 
 	for (int i = 0; i < N; i++){

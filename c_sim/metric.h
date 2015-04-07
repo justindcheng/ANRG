@@ -9,7 +9,7 @@ using namespace std;
 
 class Metric {
 	public:
-		Metric(vector<Robot> M, vector<Robot> G, double eta, double gamma );
+		Metric(vector<Robot> M, vector<vector<int> > G, double eta, double gamma );
 		~Metric();
 		double sum; 
 	private:
