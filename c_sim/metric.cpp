@@ -2,6 +2,8 @@
 #include "util.h"
 #include "robot.h"
 #include <cmath>
+#include <vector> 
+using namespace std;
 
 Metric::Metric(vector<Robot> M, vector<Robot> G, double eta, double gamma ){
 	int N = (int)G.size();
