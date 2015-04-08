@@ -142,7 +142,7 @@ for(double a = 0; a < side; a+=0.5) {
                     }
                     //After all Robots are Set in new Position, if the newer Map had a better metric record the sides
                         if(newM > OldM) {
-                            a_max = Map[1].x-Map[0].x;
+                            a_max = pow(pow(Map[1].x-Map[0].x,2)+pow(Map[1].y-Map[0].y,2),0.5);
                             b_max = pow(pow(Map[2].x-Map[1].x,2)+pow(Map[2].y-Map[1].y,2),0.5);
                             c_max = pow(pow(Map[2].x-Map[0].x,2)+pow(Map[2].y-Map[0].y,2),0.5);
                         }
