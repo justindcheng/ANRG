@@ -116,9 +116,7 @@ for (int j = 0; j < s; j++) {
   }
     /*if (j % p == 0) {
     	for(int i = 0; i < 3; i++) {
-    		for(int j = 0; j < 2; j++)
-    			outfile << Map[i][j] << " ";
-    		cout << endl;
+    		outfile << Map[i].x << " " << Map[i].y << endl;
     	}
     }*/
 
