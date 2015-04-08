@@ -5,7 +5,7 @@
 #include <vector> 
 using namespace std;
 
-Metric::Metric(vector<Robot> M, vector<vector<int> > G, double eta, double gamma ){
+Metric::Metric(vector<Robot > M, vector<vector<int> > G, double eta, double gamma ){
 	int N = (int)G.size();
 	int R = (int)G[0].size();
 
@@ -31,4 +31,8 @@ Metric::Metric(vector<Robot> M, vector<vector<int> > G, double eta, double gamma
 	}
 
 	sum = sum1;
-};
+}
+
+Metric::~Metric() {
+
+}
