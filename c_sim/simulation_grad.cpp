@@ -90,7 +90,9 @@ for(double a = 0; a < side; a+=0.5) {
             //run simulation only if triangle is solved
 			if(a <= b && b <= c) {
                 //caluculate inital positions of Map using math
-				double theta = acos((b-a*a-c*c)/2*a*c);
+                    double theta = 0;
+                if(a != b && b !=c)
+				    double theta = acos((b-a*a-c*c)/(2*a*c));
 
 				Map[0].x = 3;
 				Map[0].y = 3;
@@ -153,7 +155,7 @@ for(double a = 0; a < side; a+=0.5) {
                 }
                 //print out sides once every 'S' simulations are done
                 if(a <= b && b <= c)
-                    outfile << a_max << " " << b_max << " " << c_max << endl;
+                    outfile << max(OldM,newM) << endl << a << " " << b << " " << c << endl << a_max << " " << b_max << " " << c_max << endl << endl;
             }
         }
     }
