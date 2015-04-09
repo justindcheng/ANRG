@@ -154,8 +154,15 @@ for(double a = 0; a < side; a+=0.5) {
                     }*/
                 }
                 //print out sides once every 'S' simulations are done
-                if(a <= b && b <= c)
+                if(a <= b && b <= c) {
+                    double sum1 = a_max + b_max + c_max;
+                    double min1 = min(a_max,min(b_max,c_max));
+                    double max1 = max(a_max,max(b_max,c_max));
+                    a_max = min1;
+                    b_max = sum1- min1 - max1;
+                    c_max = max1;
                     outfile << max(OldM,newM) << endl << a << " " << b << " " << c << endl << a_max << " " << b_max << " " << c_max << endl << endl;
+                }
             }
         }
     }
